@@ -12,10 +12,10 @@
         android:textSize="24sp"
         android:text="Page 1" />
     <Button
+        android:id="@+id/p1b1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="P1Button"
-        android:onClick="p1test1"
         />
     <TextView
         android:id="@+id/p1tv1"
