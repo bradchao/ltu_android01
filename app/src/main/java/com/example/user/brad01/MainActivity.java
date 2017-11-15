@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction tran;
     private Page1Fragment f1;
     private Page2Fragment f2;
+    private Page3Fragment f3;
+    private Page4Fragment f4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         f1 = new Page1Fragment();
         f2 = new Page2Fragment();
+        f3 = new Page3Fragment();
+        f4 = new Page4Fragment();
 
         fmgr = getSupportFragmentManager();
 
@@ -39,10 +43,14 @@ public class MainActivity extends AppCompatActivity {
         tran.commit();
     }
     public void test3(View view){
-
+        tran = fmgr.beginTransaction();
+        tran.replace(R.id.container, f3);
+        tran.commit();
     }
     public void test4(View view){
-
+        tran = fmgr.beginTransaction();
+        tran.replace(R.id.container, f4);
+        tran.commit();
     }
 
 }
