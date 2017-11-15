@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.HashSet;
+
 
 public class Page1Fragment extends Fragment {
     private View mainView;
@@ -37,7 +39,12 @@ public class Page1Fragment extends Fragment {
     }
 
     private void showLottery(){
-        Log.i("brad", "OK1111");
+        HashSet<Integer> set = new HashSet<>();
+        while (set.size()<6){
+            set.add((int)(Math.random()*49+1));
+        }
+
+        tv1.setText(set.toString());
     }
 
 

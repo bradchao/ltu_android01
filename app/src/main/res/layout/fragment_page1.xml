@@ -19,6 +19,7 @@
         />
     <TextView
         android:id="@+id/p1tv1"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
