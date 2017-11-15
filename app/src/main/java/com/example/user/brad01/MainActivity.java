@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private FragmentManager fmgr;
@@ -14,11 +15,14 @@ public class MainActivity extends AppCompatActivity {
     private Page2Fragment f2;
     private Page3Fragment f3;
     private Page4Fragment f4;
+    private TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tv = (TextView)findViewById(R.id.maintv);
 
         f1 = new Page1Fragment();
         f2 = new Page2Fragment();
@@ -32,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         tran.commit();
 
     }
+
+    public void setTv(String mesg){
+        tv.setText(mesg);
+    }
+
 
     public void test1(View view){
         tran = fmgr.beginTransaction();

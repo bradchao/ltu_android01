@@ -18,6 +18,7 @@ public class Page1Fragment extends Fragment {
     private View mainView;
     private View b1;
     private TextView tv1;
+    private MainActivity mainActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,9 +46,20 @@ public class Page1Fragment extends Fragment {
         }
 
         tv1.setText(set.toString());
+        mainActivity.setTv(set.toString());
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (mainActivity == null) {
+            mainActivity = (MainActivity) context;
+        }
+    }
 
-
-
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.i("brad", "onDetach");
+    }
 }
